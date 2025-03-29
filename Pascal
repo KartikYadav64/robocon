@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main() {
+    int numRows;
+    printf("Enter number of rows");
+    scanf("%d", &numRows);
+    int row[numRows];
+    printf("[");
+    for (int i = 0; i < numRows; i++)
+     {
+        row[0] = 1;
+        printf("[");
+        for (int j = i; j >= 0; j--)
+             {
+            if (j == 0 || j == i)
+                 {
+                row[j] = 1;
+                } 
+            else
+                {
+                row[j] = row[j] + row[j - 1]; 
+                }
+        printf("%d", row[j]);
+            if(j<=i&&j!=0)
+            {
+            printf(",");
+            }
+        }
+        printf("]");
+        }
+    printf("]");
+    return 0;
+    }
